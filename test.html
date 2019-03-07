@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+        <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+        <title>Typography project</title>
+
+    </head>
+  
+    <body>
+        <main>
+
+                <div id="container">
+    
+                        <div>Hello</div>
+                        <div>Hello</div>
+                        <div>Hello</div>
+                        <div>Hello</div>
+                        <div>Hello</div>
+                        <div>Hello</div>
+                        <div class="hideme">Fade In</div>
+                        <div class="hideme">Fade In</div>
+                        <div class="hideme">Fade In</div>
+                        <div class="hideme">Fade In</div>
+                        <div class="hideme">Fade In</div>
+                        
+                    </div>
+
+                    <script>$(document).ready(function() {
+    
+                            /* Every time the window is scrolled ... */
+                            $(window).scroll( function(){
+                            
+                                /* Check the location of each desired element */
+                                $('.hideme').each( function(i){
+                                    
+                                    var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+                                    var bottom_of_window = $(window).scrollTop() + $(window).height();
+                                    
+                                    /* If the object is completely visible in the window, fade it it */
+                                    if( bottom_of_window > bottom_of_object ){
+                                        
+                                        $(this).animate({'opacity':'1'},500);
+                                            
+                                    }
+                                    
+                                }); 
+                            
+                            });
+                            
+                        });</script>
+        </main>
+    </body>
+</html>
